@@ -259,6 +259,18 @@ Parameter explanations:
 - `--render`: Whether to render the recognized results, including LaTeX code for formulas and plain text, which will be rendered and placed in the detection boxes. Note: This process is very time-consuming, and also requires prior installation of `xelatex` and `imagemagic`.
 - `--batch-size`: Batch size for dataloader. Larger batch sizes are recommended, but smaller sizes require less GPU memory. Default is 128.
 
+Prediction control:
+- `--ocr`: Enable text and formula extraction
+- `--table_rec`: Enable table extraction. Output as LaTex format. 
+- `--page_indices`: Only process designated pages. If no pages is designated, all pages will be processed. 
+
+Example: 
+
+```bash
+// If we only want to process pages 1, 3, 5, and 7. 
+python pdf_extract.py --pdf assets/examples/example.pdf --page_indices 1 3 5 7
+```
+
 > This project is dedicated to using models for high-quality content extraction from documents on diversity. It does not involve reassembling the extracted content into new documents, such as converting PDFs to Markdown. For those needs, please refer to our other GitHub project: [MinerU](https://github.com/opendatalab/MinerU)
 
 ## TODO List
