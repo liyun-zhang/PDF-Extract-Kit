@@ -3,8 +3,9 @@ import fitz
 import numpy as np
 from tqdm import tqdm
 from PIL import Image
+fitz.TOOLS.set_aa_level(0)
 
-def load_pdf_fitz(pdf_path, dpi=72):
+def load_pdf_fitz(pdf_path, dpi=600):
     images = []
     doc = fitz.open(pdf_path)
     for i in range(len(doc)):
@@ -22,7 +23,7 @@ def load_pdf_fitz(pdf_path, dpi=72):
 
 
 if __name__ == '__main__':
-    for pdf in tqdm(os.listdir("data/pdfs")):
-        images = load_pdf_fitz(os.path.join("data/pdfs", pdf), dpi=200)
-        for idx, img in enumerate(images):
-            img.save(os.path.join("data/input", pdf.replace(".pdf", f"_{idx}.jpg")))
+    images = load_pdf_fitz("../../local/43-main.pdf")
+    for idx, img in enumerate(images):
+        if idx == 14:
+            Image.fromarray(img).save(os.path.join("data/input", "43-main.pdf".replace(".pdf", f"_600.png")))
