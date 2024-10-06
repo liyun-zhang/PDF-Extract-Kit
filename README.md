@@ -262,13 +262,14 @@ Parameter explanations:
 Prediction control:
 - `--ocr`: Enable text and formula extraction
 - `--table_rec`: Enable table extraction. Output as LaTex format. 
-- `--page_indices`: Only process designated pages. If no pages is designated, all pages will be processed. 
+- `--page_indices`: Only process designated pages. If no pages is designated, all pages will be processed.
+- `--paper_id`: The ID will be in the namings.  
 
 Example: 
 
 ```bash
 // If we only want to process pages 1, 3, 5, and 7. 
-python pdf_extract.py --pdf assets/examples/example.pdf --page_indices 1 3 5 7
+python pdf_extract.py --pdf assets/examples/example.pdf --paper_id example --page_indices 1 3 5 7
 ```
 
 > This project is dedicated to using models for high-quality content extraction from documents on diversity. It does not involve reassembling the extracted content into new documents, such as converting PDFs to Markdown. For those needs, please refer to our other GitHub project: [MinerU](https://github.com/opendatalab/MinerU)

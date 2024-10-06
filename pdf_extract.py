@@ -77,6 +77,7 @@ class MathDataset(Dataset):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--pdf', type=str)
+    parser.add_argument('--paper_id', type=str, default=None)
     parser.add_argument('--page_indices', nargs='+', type=int, default=None)
     parser.add_argument('--ocr', action='store_true')
     parser.add_argument('--table_rec', action='store_true')
@@ -275,7 +276,7 @@ if __name__ == '__main__':
             for res in table_res_list:
                 new_image, _ = crop_img(res, pil_img)
                 table_cnt += 1
-                new_image.save(os.path.join(args.output, f"T-43-O{table_cnt}.png"))
+                new_image.save(os.path.join(args.output, f"T-{args.paper_id}-O{table_cnt}.png"))
 
                 if args.table_rec:
                     single_table_start = time.time()
@@ -292,7 +293,7 @@ if __name__ == '__main__':
             for i, res in enumerate(image_res_list):
                 new_image, _ = crop_img(res, pil_img)
                 plot_cnt += 1
-                new_image.save(os.path.join(args.output, f"P-43-O{plot_cnt}.png"))
+                new_image.save(os.path.join(args.output, f"P-{args.paper_id}-O{plot_cnt}.png"))
             image_cost = round(time.time() - image_start, 2)
             print(f"image cost: {image_cost}")
 
