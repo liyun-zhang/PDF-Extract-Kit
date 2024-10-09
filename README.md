@@ -275,7 +275,7 @@ Parameter explanations:
 Prediction control:
 - `--ocr`: Enable text and formula extraction
 - `--table_rec`: Enable table extraction. Output as LaTex format. 
-- `--page_indices`: Only process designated pages. If no pages is designated, all pages will be processed.
+- `--page_indices`: Only process designated pages. If no pages is designated, all pages will be processed. Starts from 1
 - `--paper_id`: The ID will be in the namings.  
 
 Example: 

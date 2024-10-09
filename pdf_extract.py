@@ -130,7 +130,7 @@ if __name__ == '__main__':
         if img_list is None:
             continue
         if args.page_indices is not None:
-            img_list = [img_list[i] for i in args.page_indices]
+            img_list = [img_list[i-1] for i in args.page_indices]
         print("pdf index:", pdf_idx, "pages:", len(img_list))
         # layout detection and formula detection
         doc_layout_result = []
