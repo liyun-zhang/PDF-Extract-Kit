@@ -248,6 +248,19 @@ If you intend to experience this project on Google Colab, please <a href="https:
 
 ## Run Extraction Script
 
+### Extract embedded images
+
+```bash
+python extract_embed_img.py --pdf path/to/pdf/file --index 2 --output output/2
+```
+
+Parameter explanations:
+- `--pdf`: PDF file to be processed. Does not support folder so far. 
+- `--index`: The index of the paper. This will be used in the naming. 
+- `--output`: Path to save results. 
+
+### Cropping method
+
 ```bash 
 python pdf_extract.py --pdf assets/examples/example.pdf
 ```
